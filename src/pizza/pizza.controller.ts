@@ -17,33 +17,30 @@ export class PizzaController {
   constructor(private readonly pizzaService: PizzaService) {}
 
   @Post()
-  create(@Body() createPizzaDto: CreatePizzaDto): {
-    id: string;
-    pizza: CreatePizzaDto;
-  } {
+  create(@Body() createPizzaDto: CreatePizzaDto) {
     return this.pizzaService.create(createPizzaDto);
   }
 
-  @Get()
-  findAll(): Pizza[] {
-    return this.pizzaService.findAll();
-  }
+  // @Get()
+  // findAll(): Pizza[] {
+  //   return this.pizzaService.findAll();
+  // }
 
-  @Get(':id')
-  findOne(@Param('id') id: string): Pizza {
-    return this.pizzaService.findOne(id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string): Pizza {
+  //   return this.pizzaService.findOne(id);
+  // }
 
-  @Patch(':id')
-  update(
-    @Param('id') id: string,
-    @Body() updatePizzaDto: UpdatePizzaDto,
-  ): Pizza {
-    return this.pizzaService.update(id, updatePizzaDto);
-  }
+  // @Patch(':id')
+  // update(
+  //   @Param('id') id: string,
+  //   @Body() updatePizzaDto: UpdatePizzaDto,
+  // ): Pizza {
+  //   return this.pizzaService.update(id, updatePizzaDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string): string {
-    return this.pizzaService.remove(id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string): string {
+  //   return this.pizzaService.remove(id);
+  // }
 }
