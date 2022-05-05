@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "9f1bf413-4cd1-411b-8411-aa08e5b77878",
+		"name": "iluvpizza",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Pizzas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI1ZDY2ZWIxNzM4MmJmYTM0YTJiZDhjIiwiaWF0IjoxNjUwNDQ0MzkwLCJleHAiOjE2NzIwNDQzOTB9.v7lNrkavpKjbQtZT-bx-YcIRJvf831L-50Nv2B99B0I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sada\",\r\n    \"brand\": \"El-3ameed\",\r\n    \"falvors\": [\"normal\", \"strong\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/pizza",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pizza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health Check (That the App is Running). Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a New Pizza Entry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI1ZDY2ZWIxNzM4MmJmYTM0YTJiZDhjIiwiaWF0IjoxNjUwNDQ0MzkwLCJleHAiOjE2NzIwNDQzOTB9.v7lNrkavpKjbQtZT-bx-YcIRJvf831L-50Nv2B99B0I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Postman's Pizza\",\r\n    \"size\": \"LARGE\",\r\n    \"ingredients\": [\"La7ma\", \"Byd\", \"Zaytoon\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/pizza",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pizza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Pizza",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI1ZDY2ZWIxNzM4MmJmYTM0YTJiZDhjIiwiaWF0IjoxNjUwNDQ0MzkwLCJleHAiOjE2NzIwNDQzOTB9.v7lNrkavpKjbQtZT-bx-YcIRJvf831L-50Nv2B99B0I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/pizza/4c9cc7d0-3053-4afe-84de-07dc09c62fa3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pizza",
+						"4c9cc7d0-3053-4afe-84de-07dc09c62fa3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pizza",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI1ZDY2ZWIxNzM4MmJmYTM0YTJiZDhjIiwiaWF0IjoxNjUwNDQ0MzkwLCJleHAiOjE2NzIwNDQzOTB9.v7lNrkavpKjbQtZT-bx-YcIRJvf831L-50Nv2B99B0I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Postman's Pizza Update\",\r\n    \"size\": \"SMALL\",\r\n    \"ingredients\": [\"Samak\", \"Chrimp\", \"Zaytoon oil\", \"pasta\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/pizza/54bb3dfe-68b3-4cda-ac7d-d63bd5f0094b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pizza",
+						"54bb3dfe-68b3-4cda-ac7d-d63bd5f0094b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Pizza",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI1ZDY2ZWIxNzM4MmJmYTM0YTJiZDhjIiwiaWF0IjoxNjUwNDQ0MzkwLCJleHAiOjE2NzIwNDQzOTB9.v7lNrkavpKjbQtZT-bx-YcIRJvf831L-50Nv2B99B0I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sada\",\r\n    \"brand\": \"El-3ameed\",\r\n    \"falvors\": [\"normal\", \"strong\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/pizza/4c9cc7d0-3053-4afe-84de-07dc09c62f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pizza",
+						"4c9cc7d0-3053-4afe-84de-07dc09c62f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

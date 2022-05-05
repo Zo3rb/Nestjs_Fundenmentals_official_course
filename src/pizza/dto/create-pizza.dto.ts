@@ -9,10 +9,6 @@ export enum PizzaSize {
 export class CreatePizzaDto {
   @IsString()
   @IsNotEmpty()
-  id: string;
-
-  @IsString()
-  @IsNotEmpty()
   size: PizzaSize;
 
   @IsString()
