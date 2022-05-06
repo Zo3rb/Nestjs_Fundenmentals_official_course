@@ -5,6 +5,7 @@ import { Model } from 'mongoose';
 import { CreatePizzaDto, PizzaSize } from './dto/create-pizza.dto';
 import { UpdatePizzaDto } from './dto/update-pizza.dto';
 import { Pizza } from '../schemas/pizza.schema';
+import { PaginationQueryDto } from './dto/pagination-query.dto';
 
 @Injectable()
 export class PizzaService {
@@ -21,9 +22,14 @@ export class PizzaService {
     }
   }
 
-  async findAll(): Promise<Pizza[]> {
+  async findAll(paginationQueryDto: PaginationQueryDto): Promise<Pizza[]> {
     try {
-      const pizzas = await this.pizzaModel.find();
+      const { skip, limit } = paginationQueryDto;
+      const pizzas = await this.pizzaModel
+        .find()
+        .skip(skip)
+        .limit(limit)
+        .exec();
       return pizzas;
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);

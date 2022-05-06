@@ -6,11 +6,13 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { PizzaService } from './pizza.service';
 import { CreatePizzaDto } from './dto/create-pizza.dto';
 import { UpdatePizzaDto } from './dto/update-pizza.dto';
 import { Pizza } from '../schemas/pizza.schema';
+import { PaginationQueryDto } from './dto/pagination-query.dto';
 
 @Controller('pizza')
 export class PizzaController {
@@ -22,8 +24,8 @@ export class PizzaController {
   }
 
   @Get()
-  findAll(): Promise<Pizza[]> {
-    return this.pizzaService.findAll();
+  findAll(@Query() paginationQueryDto: PaginationQueryDto): Promise<Pizza[]> {
+    return this.pizzaService.findAll(paginationQueryDto);
   }
 
   @Get(':id')
