@@ -10,24 +10,24 @@ import {
 import { PizzaService } from './pizza.service';
 import { CreatePizzaDto } from './dto/create-pizza.dto';
 import { UpdatePizzaDto } from './dto/update-pizza.dto';
-import { IPizza } from '../schemas/pizza.schema';
+import { Pizza } from '../schemas/pizza.schema';
 
 @Controller('pizza')
 export class PizzaController {
   constructor(private readonly pizzaService: PizzaService) {}
 
   @Post()
-  create(@Body() createPizzaDto: CreatePizzaDto): Promise<IPizza> {
+  create(@Body() createPizzaDto: CreatePizzaDto): Promise<Pizza> {
     return this.pizzaService.create(createPizzaDto);
   }
 
   @Get()
-  findAll(): Promise<IPizza[]> {
+  findAll(): Promise<Pizza[]> {
     return this.pizzaService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string): Promise<IPizza> {
+  findOne(@Param('id') id: string): Promise<Pizza> {
     return this.pizzaService.findOne(id);
   }
 
@@ -35,7 +35,7 @@ export class PizzaController {
   update(
     @Param('id') id: string,
     @Body() updatePizzaDto: UpdatePizzaDto,
-  ): Promise<IPizza> {
+  ): Promise<Pizza> {
     return this.pizzaService.update(id, updatePizzaDto);
   }
 

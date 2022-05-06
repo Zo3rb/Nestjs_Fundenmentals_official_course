@@ -4,15 +4,15 @@ import { Model } from 'mongoose';
 
 import { CreatePizzaDto, PizzaSize } from './dto/create-pizza.dto';
 import { UpdatePizzaDto } from './dto/update-pizza.dto';
-import { IPizza } from '../schemas/pizza.schema';
+import { Pizza } from '../schemas/pizza.schema';
 
 @Injectable()
 export class PizzaService {
   constructor(
-    @InjectModel('Pizza') private readonly pizzaModel: Model<IPizza>,
+    @InjectModel('Pizza') private readonly pizzaModel: Model<Pizza>,
   ) {}
 
-  async create(createPizzaDto: CreatePizzaDto): Promise<IPizza> {
+  async create(createPizzaDto: CreatePizzaDto): Promise<Pizza> {
     try {
       const newPizza = await this.pizzaModel.create(createPizzaDto);
       return newPizza;
@@ -21,7 +21,7 @@ export class PizzaService {
     }
   }
 
-  async findAll(): Promise<IPizza[]> {
+  async findAll(): Promise<Pizza[]> {
     try {
       const pizzas = await this.pizzaModel.find();
       return pizzas;
@@ -30,7 +30,7 @@ export class PizzaService {
     }
   }
 
-  async findOne(id: string): Promise<IPizza> {
+  async findOne(id: string): Promise<Pizza> {
     try {
       const pizza = await this.pizzaModel.findById(id);
       if (!pizza)
@@ -41,7 +41,7 @@ export class PizzaService {
     }
   }
 
-  async update(id: string, updatePizzaDto: UpdatePizzaDto): Promise<IPizza> {
+  async update(id: string, updatePizzaDto: UpdatePizzaDto): Promise<Pizza> {
     try {
       const pizzaToUpdate = await this.pizzaModel.findByIdAndUpdate(
         id,
